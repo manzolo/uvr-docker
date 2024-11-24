@@ -1,4 +1,4 @@
-# [UVR Gui](https://github.com/Anjok07/ultimatevocalremovergui) Docker Image (GPU Accelerated)
+# [Ultimate Vocal Remover Gui](https://github.com/Anjok07/ultimatevocalremovergui) Docker Image (GPU Accelerated)
 
 This Docker image provides a convenient environment for running Ultimate Vocal Remover.
 It is based on Ubuntu image and includes the necessary dependencies.
