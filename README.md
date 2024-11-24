@@ -37,7 +37,7 @@ This command does the following:
 If you do not have a GPU or want to run without GPU acceleration, you can omit the --gpus all flag from the command. For example:
 ```bash
 xhost +local:docker
-docker run -it -v ${PWD}/audio-files:/output -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY manzolo/uvr-docker
+docker run -it -v ${PWD}/audio-files:/app/output -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY manzolo/uvr-docker
 ```
 
 ## Interacting with UVR Gui
