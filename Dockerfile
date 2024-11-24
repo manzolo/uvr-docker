@@ -30,6 +30,17 @@ RUN sed -i '/Dora==0.0.3/d' requirements.txt
 # Installa le dipendenze Python
 RUN pip3 install -r requirements.txt
 
-# Comando per eseguire lo script Python
-CMD ["python3", "UVR.py"]
+RUN cp -r /app/models /app/default_models
 
+# Step 3: Configura lo script di inizializzazione
+RUN echo '#!/bin/sh\n' \
+         'if [ ! -d "/app/models/Demucs_Models" ]; then\n' \
+         '  echo "Initializing models...";\n' \
+         '  cp -r /app/default_models/* /app/models/;\n' \
+         'else\n' \
+         '  echo "Models already initialized.";\n' \
+         'fi\n' \
+         'python3 UVR.py\n' > /app/init.sh && chmod +x /app/init.sh
+
+# Step 4: Imposta ENTRYPOINT per eseguire l'inizializzazione
+ENTRYPOINT ["/bin/sh", "/app/init.sh"]
