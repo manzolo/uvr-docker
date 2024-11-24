@@ -4,7 +4,6 @@ This Docker image provides a convenient environment for running Ultimate Vocal R
 It is based on Ubuntu image and includes the necessary dependencies.
 
 ## Prerequisites
-- X11 (Note: This does not work with Wayland)
 - Before you can use this Docker image, you need to have Docker installed on your system.
 
 ### Installing Docker
